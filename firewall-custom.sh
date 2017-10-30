@@ -60,6 +60,9 @@ apply_rule /sbin/iptables -t mangle -P INPUT ACCEPT
 apply_rule /sbin/iptables -t mangle -P FORWARD ACCEPT
 apply_rule /sbin/iptables -t mangle -P POSTROUTING ACCEPT
 
+apply_rule /sbin/iptables -A INPUT -p udp -s 203.189.235.196 -j DROP
+apply_rule /sbin/iptables -A INPUT -p tcp -s 203.189.235.196 -j DROP
+
 /sbin/ip6tables-save  -t filter | grep -- "-A INPUT" |  grep -v "fail2ban-\|f2b-" | sed -e "s#^-A#apply_rule /sbin/ip6tables -D#g" | xargs -0 echo -e "`declare -f apply_rule`\n" | /bin/bash
 
 apply_rule /sbin/ip6tables -F FORWARD
@@ -92,6 +95,8 @@ apply_rule /sbin/ip6tables -t mangle -P INPUT ACCEPT
 apply_rule /sbin/ip6tables -t mangle -P FORWARD ACCEPT
 apply_rule /sbin/ip6tables -t mangle -P POSTROUTING ACCEPT
 
+apply_rule /sbin/ip6tables -A INPUT -p udp -s 2002:cbbd:ebc4::cbbd:ebc4 -j DROP
+apply_rule /sbin/ip6tables -A INPUT -p tcp -s 2002:cbbd:ebc4::cbbd:ebc4 -j DROP
 
 apply_rule /sbin/iptables -t nat -F
 apply_rule /sbin/iptables -t nat -Z

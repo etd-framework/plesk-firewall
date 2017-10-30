@@ -34,6 +34,7 @@ If you have any problems enabling or editing the plesk firewall rule sets, then 
 
 ### Plesk default iptables rule sets
 
+- Bad IPs (DROP)
 - Customer & Business Manager payment gateways (ACCEPT)
 - Single Sign-On (ACCEPT)
 - Plesk Installer (ACCEPT)
