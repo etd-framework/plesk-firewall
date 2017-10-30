@@ -123,8 +123,8 @@ apply_rule /sbin/ip6tables -A INPUT -p tcp --dport 443 -j ACCEPT
 apply_rule /sbin/iptables -A INPUT -p tcp --dport 21 -j ACCEPT
 apply_rule /sbin/ip6tables -A INPUT -p tcp --dport 21 -j ACCEPT
 
-apply_rule /sbin/iptables -A INPUT -p tcp --dport 22 -j ACCEPT
-apply_rule /sbin/ip6tables -A INPUT -p tcp --dport 22 -j ACCEPT
+apply_rule /sbin/iptables -A INPUT -p tcp --dport 2223 -j ACCEPT
+apply_rule /sbin/ip6tables -A INPUT -p tcp --dport 2223 -j ACCEPT
 
 apply_rule /sbin/iptables -A INPUT -p tcp --dport 587 -j ACCEPT
 apply_rule /sbin/ip6tables -A INPUT -p tcp --dport 587 -j ACCEPT
@@ -144,31 +144,31 @@ apply_rule /sbin/iptables -A INPUT -p tcp --dport 993 -j ACCEPT
 apply_rule /sbin/ip6tables -A INPUT -p tcp --dport 143 -j ACCEPT
 apply_rule /sbin/ip6tables -A INPUT -p tcp --dport 993 -j ACCEPT
 
-apply_rule /sbin/iptables -A INPUT -p tcp --dport 106 -j ACCEPT
-apply_rule /sbin/ip6tables -A INPUT -p tcp --dport 106 -j ACCEPT
+apply_rule /sbin/iptables -A INPUT -p tcp --dport 106 -j DROP
+apply_rule /sbin/ip6tables -A INPUT -p tcp --dport 106 -j DROP
 
-apply_rule /sbin/iptables -A INPUT -p tcp --dport 3306 -j ACCEPT
-apply_rule /sbin/ip6tables -A INPUT -p tcp --dport 3306 -j ACCEPT
+apply_rule /sbin/iptables -A INPUT -p tcp --dport 3306 -j DROP
+apply_rule /sbin/ip6tables -A INPUT -p tcp --dport 3306 -j DROP
 
-apply_rule /sbin/iptables -A INPUT -p tcp --dport 5432 -j ACCEPT
-apply_rule /sbin/ip6tables -A INPUT -p tcp --dport 5432 -j ACCEPT
+apply_rule /sbin/iptables -A INPUT -p tcp --dport 5432 -j DROP
+apply_rule /sbin/ip6tables -A INPUT -p tcp --dport 5432 -j DROP
 
-apply_rule /sbin/iptables -A INPUT -p tcp --dport 9008 -j ACCEPT
-apply_rule /sbin/iptables -A INPUT -p tcp --dport 9080 -j ACCEPT
-apply_rule /sbin/ip6tables -A INPUT -p tcp --dport 9008 -j ACCEPT
-apply_rule /sbin/ip6tables -A INPUT -p tcp --dport 9080 -j ACCEPT
+apply_rule /sbin/iptables -A INPUT -p tcp --dport 9008 -j DROP
+apply_rule /sbin/iptables -A INPUT -p tcp --dport 9080 -j DROP
+apply_rule /sbin/ip6tables -A INPUT -p tcp --dport 9008 -j DROP
+apply_rule /sbin/ip6tables -A INPUT -p tcp --dport 9080 -j DROP
 
-apply_rule /sbin/iptables -A INPUT -p udp --dport 137 -j ACCEPT
-apply_rule /sbin/iptables -A INPUT -p udp --dport 138 -j ACCEPT
-apply_rule /sbin/iptables -A INPUT -p tcp --dport 139 -j ACCEPT
-apply_rule /sbin/iptables -A INPUT -p tcp --dport 445 -j ACCEPT
-apply_rule /sbin/ip6tables -A INPUT -p udp --dport 137 -j ACCEPT
-apply_rule /sbin/ip6tables -A INPUT -p udp --dport 138 -j ACCEPT
-apply_rule /sbin/ip6tables -A INPUT -p tcp --dport 139 -j ACCEPT
-apply_rule /sbin/ip6tables -A INPUT -p tcp --dport 445 -j ACCEPT
+apply_rule /sbin/iptables -A INPUT -p udp --dport 137 -j DROP
+apply_rule /sbin/iptables -A INPUT -p udp --dport 138 -j DROP
+apply_rule /sbin/iptables -A INPUT -p tcp --dport 139 -j DROP
+apply_rule /sbin/iptables -A INPUT -p tcp --dport 445 -j DROP
+apply_rule /sbin/ip6tables -A INPUT -p udp --dport 137 -j DROP
+apply_rule /sbin/ip6tables -A INPUT -p udp --dport 138 -j DROP
+apply_rule /sbin/ip6tables -A INPUT -p tcp --dport 139 -j DROP
+apply_rule /sbin/ip6tables -A INPUT -p tcp --dport 445 -j DROP
 
-apply_rule /sbin/iptables -A INPUT -p udp --dport 1194 -j ACCEPT
-apply_rule /sbin/ip6tables -A INPUT -p udp --dport 1194 -j ACCEPT
+apply_rule /sbin/iptables -A INPUT -p udp --dport 1194 -j DROP
+apply_rule /sbin/ip6tables -A INPUT -p udp --dport 1194 -j DROP
 
 apply_rule /sbin/iptables -A INPUT -p udp --dport 53 -j ACCEPT
 apply_rule /sbin/iptables -A INPUT -p tcp --dport 53 -j ACCEPT
@@ -197,4 +197,3 @@ echo 1 > /proc/sys/net/ipv4/ip_forward
 #
 # End of script
 #
-

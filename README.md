@@ -14,7 +14,7 @@ If you have any problems enabling or editing the plesk firewall rule sets, then 
 
 4. Open crontab: `crontab -e`
 
-5. And add the following line: `@reboot bash /usr/local/psa/var/modules/firewall/firewall-etd.sh` 
+5. And add the following line: `@reboot bash /usr/local/psa/var/modules/firewall/firewall-etd.sh`
 
 	*(alternatively instead of the crontab you can use systemd & inotify (normally preferred, but a bit more complex))*
 
@@ -24,7 +24,7 @@ If you have any problems enabling or editing the plesk firewall rule sets, then 
 
 2. `git clone https://github.com/etd-framework/plesk-firewall.git firewall-etd`
 
-3. `chmod 700 /usr/local/psa/var/modules/firewall/firewall-etd/firewall-custom.sh` 
+3. `chmod 700 /usr/local/psa/var/modules/firewall/firewall-etd/firewall-custom.sh`
 
 4. `bash /usr/local/psa/var/modules/firewall/firewall-etd/firewall-custom.sh`
 
@@ -45,12 +45,12 @@ If you have any problems enabling or editing the plesk firewall rule sets, then 
 - SMTP (mail sending) server (ACCEPT)
 - POP3 (mail retrieval) server (ACCEPT)
 - IMAP (mail retrieval) server (ACCEPT)
-- Mail password change service (ACCEPT)
-- MySQL server (ACCEPT)
-- PostgreSQL server (ACCEPT)
-- Tomcat administrative interface (ACCEPT)
-- Samba (file sharing in Windows networks) (ACCEPT)
-- Plesk VPN (ACCEPT)
+- Mail password change service (DROP)
+- MySQL server (DROP)
+- PostgreSQL server (DROP)
+- Tomcat administrative interface (DROP)
+- Samba (file sharing in Windows networks) (DROP)
+- Plesk VPN (DROP)
 - Domain name server (ACCEPT)
 - IPv6 Neighbor Discovery (ACCEPT)
 - Ping service (ACCEPT)
